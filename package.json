@@ -1,6 +1,6 @@
 {
 	"name": "yaml-to-object-path-record",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Parses yaml into a Record<string, string> with object paths as key",
 	"keywords": [
 		"i18n",
