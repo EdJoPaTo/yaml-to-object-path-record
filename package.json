@@ -1,0 +1,81 @@
+{
+	"name": "yaml-to-object-path-record",
+	"version": "0.0.0",
+	"description": "Parses yaml into a Record<string, string> with object paths as key",
+	"keywords": [
+		"i18n",
+		"object path",
+		"record",
+		"yaml"
+	],
+	"license": "MIT",
+	"repository": "EdJoPaTo/yaml-to-object-path-record",
+	"author": {
+		"name": "EdJoPaTo",
+		"email": "yaml-to-object-path-record-npm-package@edjopato.de",
+		"url": "https://edjopato.de"
+	},
+	"scripts": {
+		"build": "del-cli dist && tsc",
+		"prepack": "npm run build",
+		"test": "tsc --sourceMap && xo && nyc ava"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"dependencies": {
+		"js-yaml": "^3.14.0",
+		"tableize-object": "^0.1.0"
+	},
+	"devDependencies": {
+		"@sindresorhus/tsconfig": "^0.7.0",
+		"@types/js-yaml": "^3.12.5",
+		"@types/node": "^14.0.5",
+		"ava": "^3.0.0",
+		"del-cli": "^3.0.0",
+		"nyc": "^15.0.0",
+		"typescript": "^4.0.2",
+		"xo": "^0.33.0"
+	},
+	"files": [
+		"dist/source",
+		"!*.test.*"
+	],
+	"main": "dist/source",
+	"types": "dist/source",
+	"nyc": {
+		"all": true,
+		"extension": [
+			".ts"
+		],
+		"include": [
+			"dist/source",
+			"source"
+		],
+		"exclude": [
+			"**/*.d.ts",
+			"**/*.test.ts"
+		],
+		"reporter": [
+			"lcov",
+			"text"
+		]
+	},
+	"xo": {
+		"rules": {
+			"@typescript-eslint/prefer-readonly-parameter-types": "error",
+			"ava/no-ignored-test-files": "off"
+		},
+		"overrides": [
+			{
+				"files": [
+					"**/*.test.*",
+					"test/**/*.*"
+				],
+				"rules": {
+					"@typescript-eslint/prefer-readonly-parameter-types": "off"
+				}
+			}
+		]
+	}
+}
