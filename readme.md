@@ -22,9 +22,9 @@ $ npm install --save-dev types/js-yaml
 const tableize = require('tableize-object');
 const yaml = require('js-yaml');
 
-export default function yamlToObjectPathRecord(yamlString: string): Record<string, string> {
+function yamlToObjectPathRecord(yamlString) {
 	const yamlObject = yaml.load(yamlString);
-	const record: Record<string, string> = tableize(yamlObject);
+	const record = tableize(yamlObject);
 	return record;
 }
 ```
@@ -37,7 +37,7 @@ import * as yaml from 'js-yaml';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const tableize = require('tableize-object');
 
-export default function yamlToObjectPathRecord(yamlString: string): Record<string, string> {
+function yamlToObjectPathRecord(yamlString: string): Record<string, string> {
 	const yamlObject = yaml.load(yamlString);
 	const record: Record<string, string> = tableize(yamlObject);
 	return record;
