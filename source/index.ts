@@ -4,7 +4,7 @@ import * as yaml from 'js-yaml';
 const tableize = require('tableize-object');
 
 export default function yamlToObjectPathRecord(yamlString: string): Record<string, string> {
-	const yamlObject = yaml.safeLoad(yamlString);
+	const yamlObject = yaml.load(yamlString);
 	const record: Record<string, string> = tableize(yamlObject);
 	return record;
 }

@@ -24,7 +24,7 @@
 		"node": ">=10"
 	},
 	"dependencies": {
-		"js-yaml": "^3.14.0",
+		"js-yaml": "^4.0.0",
 		"tableize-object": "^0.1.0"
 	},
 	"devDependencies": {
